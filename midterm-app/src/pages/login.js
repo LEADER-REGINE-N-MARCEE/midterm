@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./login.css";
 import badge from "./badge.png";
-
+import Nav from "../components/Nav.js"
 export default function Login() {
   const [payload, setPayload] = useState({
     email: "",
@@ -35,6 +35,7 @@ export default function Login() {
   };
   return (
     <div>
+      <Nav></Nav>
       <div className={"section1"}>
         <div id="container">
           <img src={badge} />
