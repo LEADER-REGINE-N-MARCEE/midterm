@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+nav{
+	display: flex;
+	
+	height: 92px;
+	background-color: #222121;
+}
+
+nav h1{
+	margin: auto 50px;
+}
+
+
+nav ul {
+	display: flex;
+	list-style-type: none;
+	
+
+}
+
+nav ul li{
+	
+	font-family: "Pirata One";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 17px;
+	text-align: center;
+	color: #DFDEDF;
+	margin: auto 50px;
+	text-decoration: none !important;
+}
+
+li a{
+	text-decoration: none !important;
+	color: #fff;
+	font-size: 25px;
+}
+
+
+link{
+	text-decoration: none;
+}
+
+#logo-nav{
+	left: 50%;
+	margin-left: -122px;
+	margin-top: 10px;
+	position:absolute;
+	align-content: center;
+	align-items: center;
+}
+
+#profile-nav{
+	margin-left: auto;
+}
