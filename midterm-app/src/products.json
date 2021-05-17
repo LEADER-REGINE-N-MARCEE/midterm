@@ -1,0 +1,50 @@
+
+// return ( //keychains
+//     <>
+//     {
+//         Product.keychains.map((item, i)=>(
+//             <div className={"box"}>
+//                 <img url ={item} />
+//             </div>
+//         ))
+//     }
+//     </>
+// )  
+
+{
+    "keychains": [
+        {
+            "path": "gs://activity4-brody.appspot.com/keychains/ErenMikasa.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/keychains/ErenYeager.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/keychains/SurveyInsignia.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/keychains/JeanKirstein.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/keychains/ArminArlert.png"
+        }
+    ],
+
+    "hoodies": [
+        {
+            "path": "gs://activity4-brody.appspot.com/hoodies/B2.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/hoodies/W1.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/hoodies/W2.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/hoodies/B1.png"
+        },
+        {
+            "path": "gs://activity4-brody.appspot.com/hoodies/BW.png"
+        }
+    ]
+}
