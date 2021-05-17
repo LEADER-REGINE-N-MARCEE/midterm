@@ -6,6 +6,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import Login from "./pages/login";
+import Register from "./pages/register";
+import Home from "./pages/home";
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
         <Route path="/" exact>
           <Redirect to="/login" />
         </Route>
-{/*         <Route component={Profile} path="/profile" />
-        <Route component={Store} path="/store" />
         <Route component={Register} path="/register" />
+        <Route component={Home} path="/home" exact />
+        {/*   
+        <Route component={Store} path="/store" />
+       <Route component={Profile} path="/profile" />
         <Route component={Cart} path="/cart" exact />
         <Route component={NotFound} /> */}
         <Route component={Login} path="/login" />

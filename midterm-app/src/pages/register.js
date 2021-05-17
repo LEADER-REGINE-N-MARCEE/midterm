@@ -5,13 +5,14 @@ import Button from "@material-ui/core/Button";
 import firebase from "../utils/firebase";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./login.css";
+import "./register.css";
 import badge from "./badge.png";
 
-export default function Login() {
+export default function Register() {
   const [payload, setPayload] = useState({
     email: "",
     password: "",
+    confirmpassword: "",
   });
 
   const userInput = (prop) => (e) => {
@@ -19,32 +20,38 @@ export default function Login() {
   };
 
   const history = useHistory();
-  const signin = (e) => {
-   
-  if (!payload.email || !payload.password) {
-      alert("Please complete all fields!");
+  const register = (e) => {
+    e.preventDefault();
 
-  }
+    if (!payload.email || !payload.password || !payload.confirmpassword) {
+        alert("Please complete all fields!");
 
-  else {
-      //firebase
-      firebase
-          .auth()
-          .signInWithEmailAndPassword(payload.email, payload.password)
-          .then((userCredential) => {
-              // Signed in 
+    } 
+    
+    else if(payload.password !== payload.confirmpassword){
+        alert("Password do not match!")
+    }
+    
+    else   {
+        //firebase
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(payload.email, payload.password)
+            .then((userCredential) => {
+                // Signed in 
+                // var user = userCredential.user;
+                // ...
+                alert("Registered & Signin");
+            })
+            .catch((error) => {
+                // var errorCode = error.code;
+                var errorMessage = error.message;
 
-              // ...
-              alert("Signin");
-          })
-          .catch((error) => {
-             
-              var errorMessage = error.message;
+                // ..
+                alert(errorMessage);
+            });
+    }
 
-              // ..
-              alert(errorMessage);
-          });
-  }
 
 };
   return (
@@ -77,15 +84,27 @@ export default function Login() {
                 }}
                 style={{ width: "100%" }}
               ></TextField>
+              <TextField
+                type="password"
+                onChange={userInput("confirmpassword")}
+                value={payload.confirmpassword}
+                id="standard-basic"
+                label="Password"
+                className="pass"
+                inputProps={{
+                  maxLength: 10,
+                }}
+                style={{ width: "100%" }}
+              ></TextField>
             </div>
 
-            <Button id="loginBtn" className="loginBtn" onClick={signin}>
-              Login
+            <Button id="loginBtn" className="loginBtn" onClick={register}>
+              Register
             </Button>
           </form>
 
           <p>
-            Don’t have an account?<Link to="/register"> Register.</Link>
+            Have an account?<Link to="/login"> Login.</Link>
           </p>
         </div>
       </div>
